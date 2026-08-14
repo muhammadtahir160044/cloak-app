@@ -25,11 +25,14 @@ def cloak():
 <head>
     <meta charset="utf-8">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@imgur">
+    <meta name="twitter:domain" content="imgur.com">
     <meta name="twitter:title" content="unexpected bestie meetups">
     <meta name="twitter:description" content="A thread">
     <meta name="twitter:image" content="https://i.imgur.com/aV7Xqxf.png">
 
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Imgur">
     <meta property="og:title" content="unexpected bestie meetups">
     <meta property="og:description" content="A thread">
     <meta property="og:image" content="https://i.imgur.com/aV7Xqxf.png">
